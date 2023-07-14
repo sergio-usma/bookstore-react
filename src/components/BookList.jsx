@@ -1,24 +1,26 @@
-import PropTypes from "prop-types";
 import BookElement from "./BookElement";
+import * as PropTypes from "prop-types";
+import { Component } from "react";
 
-const BookList = ({ books, deleteBook }) => (
-  <div>
-    <h2>Book List</h2>
-    {books.map((book) => (
+class BookList extends Component {
+  render() {
+    let { books, deleteBook } = this.props;
+    const bookElements = books.map((book) => (
       <BookElement key={book.id} book={book} deleteBook={deleteBook} />
-    ))}
-  </div>
-);
+    ));
+
+    return (
+      <div>
+        <h2>Book List</h2>
+        {bookElements}
+      </div>
+    );
+  }
+}
 
 BookList.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }).isRequired,
-  ).isRequired,
-  deleteBook: PropTypes.func.isRequired,
+  books: PropTypes.any,
+  deleteBook: PropTypes.any,
 };
 
 export default BookList;
