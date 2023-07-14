@@ -1,9 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+import * as PropTypes from "prop-types";
 
 class BookElement extends React.Component {
   render() {
-    const { book, deleteBook } = this.props;
+    let { book, deleteBook } = this.props;
     return (
       <div>
         <h3>{book.title}</h3>
@@ -17,12 +17,8 @@ class BookElement extends React.Component {
 }
 
 BookElement.propTypes = {
-  book: PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-  }).isRequired,
-  deleteBook: PropTypes.func.isRequired,
+  book: PropTypes.any,
+  deleteBook: PropTypes.any,
 };
 
 export default BookElement;
