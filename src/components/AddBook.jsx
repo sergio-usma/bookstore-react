@@ -1,13 +1,12 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
 
-const AddBook = ({ addBook }) => {
+const AddBook = (book) => {
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBook({ title, author });
+    book.addBook({ title, author });
     setTitle("");
     setAuthor("");
   };
@@ -36,10 +35,6 @@ const AddBook = ({ addBook }) => {
       </form>
     </div>
   );
-};
-
-AddBook.propTypes = {
-  addBook: PropTypes.func.isRequired,
 };
 
 export default AddBook;
