@@ -1,24 +1,25 @@
-import React from "react";
-import * as PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import DeleteBtn from "./DeleteBtn.jsx";
 
-class BookElement extends React.Component {
-  render() {
-    let { book, deleteBook } = this.props;
-    return (
-      <div>
-        <h3>{book.title}</h3>
-        <p>By {book.author}</p>
-        <button type="button" onClick={() => deleteBook(book.id)}>
-          Delete
-        </button>
+function BookElement({ bookArr }) {
+  return (
+    <section className="" key={bookArr.item_id}>
+      <div key={bookArr.item_id}>
+        <h2 className="">{bookArr.title}</h2>
+        <p className="">{bookArr.author}</p>
+        <DeleteBtn id={bookArr.item_id} />
       </div>
-    );
-  }
+    </section>
+  );
 }
 
 BookElement.propTypes = {
-  book: PropTypes.any,
-  deleteBook: PropTypes.any,
+  bookArr: PropTypes.shape({
+    item_id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BookElement;

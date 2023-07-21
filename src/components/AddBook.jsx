@@ -1,40 +1,60 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addBook } from "../redux/books/booksSlice.js";
 
-const AddBook = (book) => {
-  const [title, setTitle] = useState("");
+function AddBook() {
+  const [bookName, setBookName] = useState("");
   const [author, setAuthor] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    book.addBook({ title, author });
-    setTitle("");
+
+    const newBook = {
+      item_id: new Date().getTime(),
+      title: bookName,
+      author,
+    };
+    dispatch(addBook(newBook));
+    setBookName("");
     setAuthor("");
   };
 
   return (
-    <div>
-      <h2>Add Book</h2>
+    <div className="">
+      <h2 className="">Add New Book</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          id="title"
-          placeholder="Enter book title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
+        <div className="">
+          <div className="">
+            <input
+              type="text"
+              name="bookinput"
+              className=""
+              placeholder="Book title"
+              value={bookName}
+              onChange={(e) => setBookName(e.target.value)}
+            />
+          </div>
+          <div className="">
+            <input
+              type="text"
+              name="author"
+              className=""
+              placeholder="Book Author"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
+            />
+          </div>
 
-        <input
-          type="text"
-          id="author"
-          placeholder="Enter book author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-
-        <button type="submit">Add</button>
+          <div className="">
+            <button type="submit" className="">
+              Add Book
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
-};
+}
 
 export default AddBook;
