@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Book from "./BookElement.jsx";
 import { getBooks } from "../redux/api/apiConnect.js";
 
-function BookState() {
+function BookList() {
   const { books, isLoading, length, hasError, errorMessage } = useSelector(
     (store) => store.books,
   );
@@ -29,7 +29,7 @@ function BookState() {
     <div>
       <h1>Book List</h1>
       {length === 0 ? (
-        <div>There's nothing here. Please add a new book!</div>
+        <div>There&apos;s nothing here. Please add a new book!</div>
       ) : (
         books.map((book) => (
           <Book
@@ -44,4 +44,4 @@ function BookState() {
     </div>
   );
 }
-export default BookState;
+export default BookList;
