@@ -1,55 +1,65 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addBook } from "../redux/books/booksSlice.js";
+import { addBook } from "../redux/api/apiConnect.js";
 
 function AddBook() {
+  const [category, setCategory] = useState("category");
   const [bookName, setBookName] = useState("");
   const [author, setAuthor] = useState("");
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    if (category === "category" || !bookName) return;
     const newBook = {
       item_id: new Date().getTime(),
       title: bookName,
       author,
+      category,
     };
     dispatch(addBook(newBook));
+    setCategory("category");
     setBookName("");
     setAuthor("");
   };
 
   return (
-    <div className="">
-      <h2 className="">Add New Book</h2>
+    <div>
+      <h2>Add New Book</h2>
       <form onSubmit={handleSubmit}>
-        <div className="">
-          <div className="">
+        <div>
+          <div>
             <input
               type="text"
               name="bookinput"
-              className=""
-              placeholder="Book title"
+              placeholder="Title"
               value={bookName}
               onChange={(e) => setBookName(e.target.value)}
             />
           </div>
-          <div className="">
+          <div>
             <input
               type="text"
               name="author"
-              className=""
-              placeholder="Book Author"
+              placeholder="Author"
               value={author}
               onChange={(e) => setAuthor(e.target.value)}
             />
           </div>
-
-          <div className="">
-            <button type="submit" className="">
-              Add Book
-            </button>
+          <div>
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="Category">Select category</option>
+              <option value="Action">Action</option>
+              <option value="Fiction">Fiction</option>
+              <option value="Non-Fiction">NonFiction</option>
+            </select>
+          </div>
+          <div>
+            <br />
+            <button type="submit">Add Book</button>
           </div>
         </div>
       </form>

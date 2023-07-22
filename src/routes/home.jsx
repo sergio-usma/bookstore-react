@@ -1,10 +1,10 @@
-import BookState from "../components/BookState.jsx";
+import BookList from "../components/BookList.jsx";
 import AddBook from "../components/AddBook.jsx";
 
 function BooksPage() {
   return (
     <>
-      <BookState />
+      <BookList />
       <AddBook />
     </>
   );

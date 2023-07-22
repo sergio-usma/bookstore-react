@@ -1,25 +1,28 @@
 import PropTypes from "prop-types";
-import DeleteBtn from "./DeleteBtn.jsx";
+import { useDispatch } from "react-redux";
+import { deleteBook } from "../redux/api/apiConnect.js";
 
-function BookElement({ bookArr }) {
+function Book({ id, category, title, author }) {
+  const dispatch = useDispatch();
   return (
-    <section className="" key={bookArr.item_id}>
-      <div key={bookArr.item_id}>
-        <h2 className="">{bookArr.title}</h2>
-        <p className="">{bookArr.author}</p>
-        <DeleteBtn id={bookArr.item_id} />
+    <div>
+      <span>{category}</span>
+      <h3>{title}</h3>
+      <p>{author}</p>
+      <div>
+        <button type="button" onClick={() => dispatch(deleteBook(id))}>
+          Remove
+        </button>
       </div>
-    </section>
+    </div>
   );
 }
 
-BookElement.propTypes = {
-  bookArr: PropTypes.shape({
-    item_id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    category: PropTypes.string.isRequired,
-  }).isRequired,
+Book.propTypes = {
+  category: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-export default BookElement;
+export default Book;
