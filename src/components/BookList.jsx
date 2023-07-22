@@ -27,7 +27,6 @@ function BookList() {
 
   return (
     <div>
-      <h1>Book List</h1>
       {length === 0 ? (
         <div>There&apos;s nothing here. Please add a new book!</div>
       ) : (

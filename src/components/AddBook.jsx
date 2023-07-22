@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addBook } from "../redux/api/apiConnect.js";
+import "../styles/AddBook.css";
 
 function AddBook() {
   const [category, setCategory] = useState("category");
@@ -24,44 +25,40 @@ function AddBook() {
   };
 
   return (
-    <div>
-      <h2>Add New Book</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <div>
-            <input
-              type="text"
-              name="bookinput"
-              placeholder="Title"
-              value={bookName}
-              onChange={(e) => setBookName(e.target.value)}
-            />
-          </div>
-          <div>
-            <input
-              type="text"
-              name="author"
-              placeholder="Author"
-              value={author}
-              onChange={(e) => setAuthor(e.target.value)}
-            />
-          </div>
-          <div>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="Category">Select category</option>
-              <option value="Action">Action</option>
-              <option value="Fiction">Fiction</option>
-              <option value="Non-Fiction">NonFiction</option>
-            </select>
-          </div>
-          <div>
-            <br />
-            <button type="submit">Add Book</button>
-          </div>
-        </div>
+    <div className="addBook__container">
+      <h2 className="addBook__container__title">Add New Book</h2>
+      <form className="form__container" onSubmit={handleSubmit}>
+        <input
+          className="input"
+          type="text"
+          name="bookinput"
+          placeholder="Title"
+          value={bookName}
+          onChange={(e) => setBookName(e.target.value)}
+        />
+        <input
+          className="input"
+          type="text"
+          name="author"
+          placeholder="Author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+
+        <select
+          className="input"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
+          <option value="Category">Select category</option>
+          <option value="Action">Action</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Non-Fiction">NonFiction</option>
+        </select>
+
+        <button className="book__addBtn" type="submit">
+          Add Book
+        </button>
       </form>
     </div>
   );
