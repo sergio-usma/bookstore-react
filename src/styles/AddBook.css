@@ -1,0 +1,82 @@
+.addBook__container {
+    width: 100vw;
+    max-width: 85rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 2rem auto;
+    padding: 1rem 2rem 2rem 2rem;
+    border-top: solid 1px #e8e8e8;
+}
+
+.addBook__container__title {
+    height: 1.5rem;
+    align-self: flex-start;
+    margin: 1rem 0;
+    font-family: Montserrat, sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    color: #888;
+}
+
+.form__container {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    gap: 2%;
+}
+
+.input {
+    height: 2.813rem;
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+    background-color: #FFFFFF;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.input:first-child {
+    flex-basis: 35%;
+    flex-grow: 2;
+}
+
+.input:nth-child(2) {
+    flex-basis: 25%;
+}
+
+.input:nth-child(3) {
+    flex-basis: 15%;
+}
+
+.book__addBtn {
+    width: 11.5rem;
+    height: 2.813rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 3px;
+    background-color: #0290ff;
+    border: none;
+
+    font-family: RobotoSlab, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #FFFFFF;
+}
