@@ -58,13 +58,16 @@ li {
 }
 
 .profile__container {
-    width: 2rem;
-    height: 2rem;
+    width: 2.8rem;
+    height: 2.8rem;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    align-content: center;
     gap: 1rem;
-    background-color: red;
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
 }
+
