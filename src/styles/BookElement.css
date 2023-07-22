@@ -1,0 +1,83 @@
+.book {
+    width: 75rem;
+    height: 10.625rem;
+    margin: 2.313rem auto 0 auto;
+    padding: 2rem 9.188rem 1.625rem 1.688rem;
+    border-radius: 4px;
+    border: solid 1px #e8e8e8;
+    background-color: #FFFFFF;
+}
+
+.book__category {
+    width: 4.313rem;
+    height: 1.125rem;
+    margin: 0 1.188rem 0 0;
+    opacity: 0.5;
+    font-family: Montserrat, sans-serif;
+    font-size: 0.875rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #121212;
+}
+
+.book__title{
+    height: 1.813rem;
+    margin: 0.188rem 2.125rem 0 0;
+    font-family: RobotoSlab,sans-serif;
+    font-size: 1.375rem;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #121212;
+}
+
+.book__author {
+    height: 1.188rem;
+    margin: 0.25rem 0 0;
+    font-family: RobotoSlab, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4386bf;
+}
+
+.book__button-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    padding: 1rem 0 0.5rem 0;
+    gap: 0.938rem;
+}
+
+.book__button-container__btn {
+    height: 1.188rem;
+    font-family: RobotoSlab, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4386bf;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/*select the .book__button-container__btn that are major than 1*/
+.book__button-container__btn:nth-child(2) {
+    padding: 0 1rem;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
