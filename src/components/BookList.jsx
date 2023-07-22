@@ -10,7 +10,7 @@ function BookList() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getBooks());
-  }, [length]);
+  }, [dispatch, length]);
 
   if (isLoading) {
     return <div>Loading</div>;
