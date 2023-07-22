@@ -47,11 +47,11 @@ function AddBook() {
             />
           </div>
           <div>
-            <p>Select category</p>
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
+              <option value="Category">Select category</option>
               <option value="Action">Action</option>
               <option value="Fiction">Fiction</option>
               <option value="Non-Fiction">NonFiction</option>
